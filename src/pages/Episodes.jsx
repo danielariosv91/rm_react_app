@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { getEpisodies } from "../service/episodesService";
-import { Paper, Table, TableContainer, TableCell, TableHead, TableBody, TableRow, } from "./../libraries/MUI"
+import { Paper, Table, TableContainer, TableCell, TableHead, TableBody, TableRow, } from "../libraries/MUI"
 
 function Episodes() {
 
