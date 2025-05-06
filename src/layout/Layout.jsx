@@ -17,20 +17,9 @@ export default function Layout() {
                     overflow: 'hidden'
                 }}
             >
-                <Box
-                    sx={{
-                        flexBasis: '25%',
-                        flexShrink: 0,
-                        flexGrow: 0,
-                        height: '100%',
-                        overflowY: 'auto',
-                        backgroundColor: '#f5f5f5',
-                        padding: 2
-                    }}
-                >
-                    <List />
-                </Box>
+                <List />
 
+                {/* Contenido principal - 60% */}
                 <Box
                     sx={{
                         flexBasis: '70%',
