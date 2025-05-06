@@ -1,29 +1,29 @@
 import { useEffect, useState } from "react"
-import { Grid } from "../libraries/MUI"
-import { getCharacters } from "../service/charactersService";
+import { Grid, Paper, Table, TableContainer, TableCell, TableHead, TableBody, TableRow, } from "../libraries/MUI"
+import { getLocations } from "../service/locationsService";
 import DataTable from "../components/Datatable";
 
-function Character() {
+function Location() {
 
-    const [characters, setcharacters] = useState([]);
+    const [locations, setlocations] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchCharacters = async () => {
             try {
-                const data = await getCharacters();
+                const data = await getLocations();
                 const { info, results } = data;
 
                 const mapResult = results.map((result) => {
                     return {
                         id: result.id,
                         name: result.name,
-                        gender: result.gender,
-                        status: result.status
+                        dimension: result.dimension,
+                        type: result.type
                     }
                 })
 
-                setcharacters(mapResult)
+                setlocations(mapResult)
             } catch (error) {
                 console.log('Error al cargar episodios')
             } finally {
@@ -42,7 +42,7 @@ function Character() {
                     alignItems: "center",
                 }}>
                 <Grid size={{ xs: 6, md: 8 }}>
-                    <DataTable data={characters} />
+                    <DataTable data={locations} />
                 </Grid>
             </Grid>
 
@@ -50,4 +50,4 @@ function Character() {
     )
 }
 
-export default Character
+export default Location

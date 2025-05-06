@@ -5,6 +5,7 @@ import Layout from "./layout/Layaout"
 import Index from "./pages/Index"
 import Episodes from "./pages/Episodes"
 import Character from "./pages/Characters"
+import Location from "./pages/Location"
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route index element={<Index />}></Route>
         <Route path="/episodes" element={<Episodes />}></Route>
         <Route path="/character" element={<Character />}></Route>
+        <Route path="/locations" element={<Location />}></Route>
       </Route>
     </Routes>
   )

@@ -1,19 +1,22 @@
-import * as React from 'react';
+import { useMemo } from "react"
 import { DataGrid } from '@mui/x-data-grid';
 import { Paper } from "../libraries/MUI"
 
-const columns = [
-    { field: 'id', headerName: 'ID' },
-    { field: 'name', headerName: 'Name', width: 250 },
-    { field: 'gender', headerName: 'Gender', width: 150 },
-    { field: 'status', headerName: 'Status', width: 150 },
-];
 
 const paginationModel = { page: 0, pageSize: 5 };
 
-
-
 export default function DataTable({ data }) {
+
+    const columns = useMemo(() => {
+        if (!data || data.length === 0) return [];
+
+        return Object.keys(data[0]).map((key) => ({
+            field: key,
+            headerName: key.toUpperCase(),
+            width: 150,
+        }));
+    }, [data]);
+
     return (
         <>
             {data.length > 0 ? (
