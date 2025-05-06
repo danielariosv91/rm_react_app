@@ -1,4 +1,4 @@
-import { AppBar, Box, IconButton, MenuIcon, Toolbar, Typography } from "../libraries/MUI"
+import { AppBar, Box, IconButton, MenuIcon, Toolbar, Typography } from "./../../libraries/MUI"
 
 export default function Navbar() {
     return (

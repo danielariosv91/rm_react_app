@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom"
 
 import './App.css'
-import Layout from "./layout/Layaout"
+import Layout from "./layout/Layout"
 import Index from "./pages/Index"
 import Episodes from "./pages/Episodes"
 import Character from "./pages/Characters"
