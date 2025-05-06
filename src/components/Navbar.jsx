@@ -1,4 +1,4 @@
-import { AppBar, Box, Button, IconButton, MenuIcon, Toolbar, Typography } from "../libraries/MUI"
+import { AppBar, Box, IconButton, MenuIcon, Toolbar, Typography } from "../libraries/MUI"
 
 export default function Navbar() {
     return (
@@ -15,9 +15,8 @@ export default function Navbar() {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                        News
+                        Rick And Morty API
                     </Typography>
-                    <Button color="inherit">Login</Button>
                 </Toolbar>
             </AppBar>
         </Box>

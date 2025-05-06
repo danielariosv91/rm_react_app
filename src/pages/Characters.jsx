@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
-import { Paper, Table, TableContainer, TableCell, TableHead, TableBody, TableRow, } from "../libraries/MUI"
+import { Grid, Paper, Table, TableContainer, TableCell, TableHead, TableBody, TableRow, } from "../libraries/MUI"
 import { getCharacters } from "../service/charactersService";
+import DataTable from "../components/Datatable";
 
 function Character() {
 
@@ -15,6 +16,7 @@ function Character() {
 
                 const mapResult = results.map((result) => {
                     return {
+                        id: result.id,
                         name: result.name,
                         gender: result.gender,
                         status: result.status
@@ -33,31 +35,17 @@ function Character() {
 
     return (
         <>
-            <TableContainer component={Paper}>
-                <Table sx={{ minWidth: 650 }} aria-label="simple table">
-                    <TableHead>
-                        <TableRow>
-                            <TableCell>Name</TableCell>
-                            <TableCell align="right">Episode</TableCell>
-                            <TableCell align="right">On Air</TableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {characters.map((row) => (
-                            <TableRow
-                                key={row.name}
-                                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                            >
-                                <TableCell component="th" scope="row">
-                                    {row.name}
-                                </TableCell>
-                                <TableCell align="right">{row.gender}</TableCell>
-                                <TableCell align="right">{row.status}</TableCell>
-                            </TableRow>
-                        ))}
-                    </TableBody>
-                </Table>
-            </TableContainer>
+
+            <Grid container spacing={2}
+                sx={{
+                    justifyContent: "center",
+                    alignItems: "center",
+                }}>
+                <Grid size={{ xs: 6, md: 8 }}>
+                    <DataTable data={characters} />
+                </Grid>
+            </Grid>
+
         </>
     )
 }
