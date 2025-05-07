@@ -1,6 +1,7 @@
 export { default as AppBar } from '@mui/material/AppBar'
 export { default as Box } from '@mui/material/Box'
 export { default as Button } from '@mui/material/Button'
+export { default as Divider } from '@mui/material/Divider'
 export { default as Grid } from '@mui/material/Grid'
 export { default as IconButton } from '@mui/material/IconButton'
 export { default as MenuIcon } from '@mui/material/Menu'

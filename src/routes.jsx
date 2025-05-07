@@ -1,18 +1,20 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 
 import Layout from "./layout/Layout"
-import Index from "./pages/Index"
-import Episodes from "./pages/Episodes"
-import Character from "./pages/Characters"
-import Location from "./pages/Location"
+import Home from "./pages/HomePage"
+import Episodes from "./pages/EpisodesPage"
+import Character from "./pages/CharactersPage"
+import Location from "./pages/LocationPage"
+import CharacterDetail from "./features/characters/pages/CharacterDetailPage"
 
 function AppRoutes() {
     return (
         <Routes>
             <Route path="/" element={<Layout />}>
-                <Route index element={<Index />}></Route>
+                <Route index element={<Home />}></Route>
                 <Route path="/episodes" element={<Episodes />}></Route>
                 <Route path="/character" element={<Character />}></Route>
+                <Route path="/character/:id" element={<CharacterDetail />}></Route>
                 <Route path="/locations" element={<Location />}></Route>
             </Route>
         </Routes>

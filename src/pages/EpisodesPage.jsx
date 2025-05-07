@@ -11,7 +11,7 @@ function Episodes() {
         const fetchEpisodes = async () => {
             try {
                 const data = await getEpisodies();
-                const { info, results } = data;
+                const { results } = data;
 
                 const mapResult = results.map((result) => {
                     return {

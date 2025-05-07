@@ -8,6 +8,12 @@ export default function SidebarMenu() {
                 <List>
                     <ListItem disablePadding>
                         <ListItemButton>
+                            <NavLink to="/" end>
+                                Home
+                            </NavLink>
+                        </ListItemButton>
+                    </ListItem><ListItem disablePadding>
+                        <ListItemButton>
                             <NavLink to="/character" end>
                                 Characters
                             </NavLink>
