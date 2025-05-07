@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import { Box } from "@mui/material";
-import List from "./../components/common/List";
+import SidebarMenu from "../components/common/SidebarMenu";
 import Navbar from "./../components/common/Navbar";
 
 export default function Layout() {
@@ -17,16 +17,16 @@ export default function Layout() {
                     overflow: 'hidden'
                 }}
             >
-                <List />
+                <SidebarMenu />
 
                 {/* Contenido principal - 60% */}
                 <Box
                     sx={{
-                        flexBasis: '70%',
+                        flexBasis: '60%',
                         flexGrow: 1,
                         height: '100%',
                         overflowY: 'auto',
-                        padding: 2
+                        padding: 5
                     }}
                 >
                     <Outlet />

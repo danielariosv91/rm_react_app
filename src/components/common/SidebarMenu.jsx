@@ -1,28 +1,29 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
+import { NavLink } from "react-router-dom"
+import { Box, List, ListItem, ListItemText, ListItemButton } from './../../libraries/MUI'
 
-export default function BasicList() {
+export default function SidebarMenu() {
     return (
         <Box sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
             <nav aria-label="main mailbox folders">
                 <List>
                     <ListItem disablePadding>
                         <ListItemButton>
-
-                            <ListItemText secondary="Characters" />
+                            <NavLink to="/character" end>
+                                Characters
+                            </NavLink>
                         </ListItemButton>
                     </ListItem>
                     <ListItem disablePadding>
                         <ListItemButton>
-                            <ListItemText secondary="Episodes" />
+                            <NavLink to="/episodes" end>
+                                Episodes
+                            </NavLink>
                         </ListItemButton>
                     </ListItem> <ListItem disablePadding>
                         <ListItemButton>
-                            <ListItemText secondary="Locations" />
+                            <NavLink to="/locations" end>
+                                Locations
+                            </NavLink>
                         </ListItemButton>
                     </ListItem>
                 </List>
