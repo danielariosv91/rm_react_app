@@ -41,9 +41,9 @@ react_app/
 
 ## 📦 Setup Instructions
 
-# Install dependencies
+### Install dependencies
 yarn install
 
-# Start development server
+### Start development server
 yarn dev
 
