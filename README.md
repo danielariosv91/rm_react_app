@@ -19,6 +19,8 @@ This project is a single-page application (SPA) built with **React**, using **Vi
 - [Rick and Morty API](https://rickandmortyapi.com/)
 
 ## 📂 Project Structure
+
+```bash
 react_app/
 ├── public/
 ├── src/
