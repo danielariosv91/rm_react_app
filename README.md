@@ -37,10 +37,10 @@ react_app/
 ├── index.html
 ├── package.json
 └── vite.config.ts
+```
 
 ## 📦 Setup Instructions
 
-```bash
 # Install dependencies
 yarn install
 
