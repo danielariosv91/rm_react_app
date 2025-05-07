@@ -1,12 +1,47 @@
-# React + Vite
+# Rick and Morty Explorer (React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a single-page application (SPA) built with **React**, using **Vite** for fast development, **Material UI (MUI)** for component styling, and **React Router DOM** for routing. It consumes the public [Rick and Morty API](https://rickandmortyapi.com/) to display characters, locations, and episodes from the series.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Browse characters from the Rick and Morty universe
+- View detailed information about each character
+- Navigate through multiple pages with client-side routing
+- Styled with MUI UI for a modern UI experience
+- Built with Vite for lightning-fast performance
 
-## Expanding the ESLint configuration
+## 🛠️ Technologies Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- [React](https://react.dev/)
+- [Vite](https://vitejs.dev/)
+- [Material UI](https://mui.com/)
+- [React Router DOM](https://reactrouter.com/)
+- [Rick and Morty API](https://rickandmortyapi.com/)
+
+## 📂 Project Structure
+react_app/
+├── public/
+├── src/
+│ ├── assets/
+│ ├── components/
+│ ├── features/
+│ ├── layout/
+│ ├── libraries/
+│ ├── pages/
+│ ├── service/
+│ ├── App.tsx
+│ ├── main.tsx
+│ └── routes.tsx
+├── index.html
+├── package.json
+└── vite.config.ts
+
+## 📦 Setup Instructions
+
+```bash
+# Install dependencies
+yarn install
+
+# Start development server
+yarn dev
+
