@@ -1,39 +1,31 @@
 import { NavLink } from "react-router-dom"
-import { Box, List, ListItem, ListItemText, ListItemButton } from './../../libraries/MUI'
 
 export default function SidebarMenu() {
     return (
-        <Box sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
-            <nav aria-label="main mailbox folders">
-                <List>
-                    <ListItem disablePadding>
-                        <ListItemButton>
-                            <NavLink to="/" end>
-                                Home
-                            </NavLink>
-                        </ListItemButton>
-                    </ListItem><ListItem disablePadding>
-                        <ListItemButton>
-                            <NavLink to="/character" end>
-                                Characters
-                            </NavLink>
-                        </ListItemButton>
-                    </ListItem>
-                    <ListItem disablePadding>
-                        <ListItemButton>
-                            <NavLink to="/episodes" end>
-                                Episodes
-                            </NavLink>
-                        </ListItemButton>
-                    </ListItem> <ListItem disablePadding>
-                        <ListItemButton>
-                            <NavLink to="/locations" end>
-                                Locations
-                            </NavLink>
-                        </ListItemButton>
-                    </ListItem>
-                </List>
-            </nav>
-        </Box>
+        <div className="drawer lg:drawer-open">
+            <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
+            <div className="drawer-content flex flex-col items-center justify-center">
+                <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">
+                    Open drawer
+                </label>
+            </div>
+            <div className="drawer-side">
+                <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
+                <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4">
+                    <li>
+                        <NavLink to="/">Home</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/character">Characters</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/episodes">Episodes</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/locations">Location</NavLink>
+                    </li>
+                </ul>
+            </div>
+        </div>
     );
 }
