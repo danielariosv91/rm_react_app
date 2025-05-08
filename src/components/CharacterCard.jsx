@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react"
 import CardItem from "../components/common/Card";
-import Grid from '@mui/material/Grid';
 import { getFirstCharacters } from "../service/charactersService";
 
 
@@ -24,11 +23,11 @@ export default function CharacterCard() {
 
     return (
         <>
-            <Grid container spacing={8} justifyContent="center">
+            <div class="flex justify-around">
                 {characters.map((item) =>
                     <CardItem item={item} key={item.id} />
                 )}
-            </Grid>
+            </div>
         </>
     )
 }

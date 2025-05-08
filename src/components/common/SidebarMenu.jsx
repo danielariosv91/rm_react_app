@@ -1,13 +1,12 @@
 import { NavLink } from "react-router-dom"
+import { Outlet } from "react-router-dom";
 
 export default function SidebarMenu() {
     return (
         <div className="drawer lg:drawer-open">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-            <div className="drawer-content flex flex-col items-center justify-center">
-                <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">
-                    Open drawer
-                </label>
+            <div className="drawer-content">
+                <Outlet />
             </div>
             <div className="drawer-side">
                 <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
