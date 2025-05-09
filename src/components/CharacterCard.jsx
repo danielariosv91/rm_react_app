@@ -23,7 +23,7 @@ export default function CharacterCard() {
 
     return (
         <>
-            <div class="flex justify-around">
+            <div class="flex justify-center gap-7">
                 {characters.map((item) =>
                     <CardItem item={item} key={item.id} />
                 )}

@@ -25,12 +25,24 @@ function Index() {
                 </div>
             </div>
 
-            <div className="flex justify-around m-6 ">
-                <article class="prose">
-                    <h1> Characters</h1>
-                </article>
-            </div>
-            <CharacterCard />
+
+
+            <section className="py-7">
+                <div className="flex justify-around m-6 ">
+                    <article class="prose">
+                        <h1> Characters</h1>
+                    </article>
+                </div>
+                <CharacterCard />
+            </section>
+
+            <section className="bg-white py-7">
+                <div className="flex justify-around m-6 ">
+                    <article class="prose">
+                        <h1 className="text-base-100"> Episodes</h1>
+                    </article>
+                </div>
+            </section>
         </>
     )
 }
