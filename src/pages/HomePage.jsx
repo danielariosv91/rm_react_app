@@ -1,6 +1,4 @@
-
-import { Divider, Typography } from "../libraries/MUI"
-
+import { NavLink } from "react-router-dom"
 import CharacterCard from "./../components/CharacterCard"
 
 function Index() {
@@ -20,7 +18,9 @@ function Index() {
                         <p className="mb-5">
                             It uses the public <a href="https://rickandmortyapi.com/" target="_blank" rel="noopener noreferrer">Rick and Morty API</a> to display detailed information about characters, locations, and episodes from the series.
                         </p>
-                        <button className="btn btn-success">Explore</button>
+                        <button className="btn btn-success">
+                            <NavLink to="/character">Characters</NavLink>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -34,14 +34,6 @@ function Index() {
                     </article>
                 </div>
                 <CharacterCard />
-            </section>
-
-            <section className="bg-white py-7">
-                <div className="flex justify-around m-6 ">
-                    <article class="prose">
-                        <h1 className="text-base-100"> Episodes</h1>
-                    </article>
-                </div>
             </section>
         </>
     )

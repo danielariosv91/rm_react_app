@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import CardItem from "../components/common/Card";
-import { getFirstCharacters } from "../service/charactersService";
+import { getFirstCharacters } from "../features/characters/service/charactersService";
 
 
 export default function CharacterCard() {

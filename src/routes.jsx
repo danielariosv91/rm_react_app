@@ -3,8 +3,9 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 import Layout from "./layout/Layout"
 import Home from "./pages/HomePage"
 import Episodes from "./pages/EpisodesPage"
-import Character from "./pages/CharactersPage"
 import Location from "./pages/LocationPage"
+
+import Character from "./features/characters/pages/CharactersPage"
 import CharacterDetail from "./features/characters/pages/CharacterDetailPage"
 
 function AppRoutes() {
