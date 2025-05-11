@@ -35,6 +35,9 @@ function TableCharacter() {
                     return {
                         id: result.id,
                         name: result.name,
+                        image: result.image,
+                        species: result.species,
+                        location: result.location.name,
                         gender: result.gender,
                         status: result.status
                     }
@@ -61,35 +64,52 @@ function TableCharacter() {
 
     return (
         <>
-
-            <div className="card card-border bg-zinc-100 w-96">
-                <div className="card-body text-base-100">
+            <div className="card card-border bg-base-100 w-fill mx-auto mt-7 shadow-xl/50">
+                <div className="card-body">
                     <div className="overflow-x-auto">
-                        <table className="table ">
+                        <table className="table">
                             {/* head */}
                             <thead>
-                                <tr className="text-base-100">
-                                    <th></th>
+                                <tr>
+
                                     <th>Name</th>
-                                    <th>Job</th>
-                                    <th>Favorite Color</th>
+                                    <th>Specie</th>
+                                    <th>Gender</th>
+                                    <th>Status</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {/* row 1 */}
-                                {filtered.map(c =>
+                                {filtered.map((c) => (
                                     <tr>
-                                        <th>{c.id}</th>
-                                        <td>{c.name}</td>
+                                        <td>
+                                            <div className="flex items-center gap-3">
+                                                <div className="avatar">
+                                                    <div className="mask mask-squircle h-12 w-12">
+                                                        <img
+                                                            src={c.image}
+                                                            alt="Avatar Tailwind CSS Component" />
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div className="font-bold">{c.name}</div>
+                                                    <div className="text-sm opacity-50">{c.location}</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>{c.species}</td>
                                         <td>{c.gender}</td>
                                         <td>{c.status}</td>
                                     </tr>
-                                )}
+
+                                ))}
                             </tbody>
                         </table>
                     </div>
-
-                    <div className="join mt-7">
+                </div>
+                <div className="justify-center card-actions my-7">
+                    {/* Pagination Controls */}
+                    <div className="join">
+                        {/* Dynamically Generate Pagination Buttons */}
                         {Array.from({ length: pages }, (_, index) => (
                             <button
                                 key={index}
@@ -103,6 +123,7 @@ function TableCharacter() {
                     </div>
                 </div>
             </div>
+
         </>
     )
 }
