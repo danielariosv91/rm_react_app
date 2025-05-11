@@ -61,42 +61,47 @@ function TableCharacter() {
 
     return (
         <>
-            <div className="overflow-x-auto">
-                <table className="table">
-                    {/* head */}
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>Name</th>
-                            <th>Job</th>
-                            <th>Favorite Color</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {/* row 1 */}
-                        {filtered.map(c =>
-                            <tr>
-                                <th>{c.id}</th>
-                                <td>{c.name}</td>
-                                <td>{c.gender}</td>
-                                <td>{c.status}</td>
-                            </tr>
-                        )}
-                    </tbody>
-                </table>
-            </div>
 
-            <div className="join mt-7">
-                {Array.from({ length: pages }, (_, index) => (
-                    <button
-                        key={index}
-                        className={`join-item btn btn-square ${currentPage === index + 1 ? "btn-active" : ""
-                            }`}
-                        onClick={() => handlePageChange(index + 1)}
-                    >
-                        {index + 1}
-                    </button>
-                ))}
+            <div className="card card-border bg-zinc-100 w-96">
+                <div className="card-body text-base-100">
+                    <div className="overflow-x-auto">
+                        <table className="table ">
+                            {/* head */}
+                            <thead>
+                                <tr className="text-base-100">
+                                    <th></th>
+                                    <th>Name</th>
+                                    <th>Job</th>
+                                    <th>Favorite Color</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {/* row 1 */}
+                                {filtered.map(c =>
+                                    <tr>
+                                        <th>{c.id}</th>
+                                        <td>{c.name}</td>
+                                        <td>{c.gender}</td>
+                                        <td>{c.status}</td>
+                                    </tr>
+                                )}
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div className="join mt-7">
+                        {Array.from({ length: pages }, (_, index) => (
+                            <button
+                                key={index}
+                                className={`join-item btn btn-square ${currentPage === index + 1 ? "btn-active" : ""
+                                    }`}
+                                onClick={() => handlePageChange(index + 1)}
+                            >
+                                {index + 1}
+                            </button>
+                        ))}
+                    </div>
+                </div>
             </div>
         </>
     )
