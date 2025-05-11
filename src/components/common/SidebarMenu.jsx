@@ -17,12 +17,6 @@ export default function SidebarMenu() {
                     <li>
                         <NavLink to="/character">Characters</NavLink>
                     </li>
-                    <li>
-                        <NavLink to="/episodes">Episodes</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/locations">Location</NavLink>
-                    </li>
                 </ul>
             </div>
         </div>

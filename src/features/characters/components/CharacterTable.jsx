@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
 import { getCharacters } from "./../service/charactersService";
 
 
 function TableCharacter() {
+    const navigate = useNavigate();
     const items_per_page = 5;
     const [pages, setPages] = useState(0); // Total number of pages
     const [filtered, setFiltered] = useState([]); // Pagination
@@ -62,9 +64,14 @@ function TableCharacter() {
         setCurrentPage(page);
     };
 
+    const handleNavigate = (event, id) => {
+        event.stopPropagation();
+        navigate(`/character/${id}`);
+    }
+
     return (
         <>
-            <div className="card card-border bg-base-100 w-fill mx-auto mt-7 shadow-xl/50">
+            <div className="card card-border bg-base-100 w-fill mx-auto mt-7 shadow-lg shadow-emerald-300/40">
                 <div className="card-body">
                     <div className="overflow-x-auto">
                         <table className="table">
@@ -75,6 +82,7 @@ function TableCharacter() {
                                     <th>Name</th>
                                     <th>Specie</th>
                                     <th>Gender</th>
+                                    <th>Status</th>
                                     <th>Status</th>
                                 </tr>
                             </thead>
@@ -99,6 +107,11 @@ function TableCharacter() {
                                         <td>{c.species}</td>
                                         <td>{c.gender}</td>
                                         <td>{c.status}</td>
+                                        <th>
+                                            <button className="btn btn-xs btn-success" onClick={(e) => handleNavigate(e, c.id)}>
+                                                Detail
+                                            </button>
+                                        </th>
                                     </tr>
 
                                 ))}
@@ -106,14 +119,14 @@ function TableCharacter() {
                         </table>
                     </div>
                 </div>
-                <div className="justify-center card-actions my-7">
+                <div className="justify-center card-actions my-7 ">
                     {/* Pagination Controls */}
                     <div className="join">
                         {/* Dynamically Generate Pagination Buttons */}
                         {Array.from({ length: pages }, (_, index) => (
                             <button
                                 key={index}
-                                className={`join-item btn btn-square ${currentPage === index + 1 ? "btn-active" : ""
+                                className={`shadow-lg/50 join-item btn btn-square ${currentPage === index + 1 ? "btn-active" : ""
                                     }`}
                                 onClick={() => handlePageChange(index + 1)}
                             >
