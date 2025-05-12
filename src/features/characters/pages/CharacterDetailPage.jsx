@@ -5,7 +5,9 @@ import { getOneEpisode } from "./../../../service/episodesService"
 
 /** components */
 import Modal from './../../../components/common/Modal'
+import CharacterDetailView from './../components/CharacterDetailView'
 import EpisodeDetail from './../../episodes/components/EpisodesDetail'
+
 
 function CharacterDetail() {
     const { id } = useParams()
@@ -59,30 +61,11 @@ function CharacterDetail() {
                 <div className="card card-dash bg-base-100 w-200 shadow-lg shadow-emerald-300/40">
                     <div className="card-body">
                         <div className="flex">
-                            <div className="w-16 flex-auto">
-                                {character ? (
-                                    <>
-                                        <div className="avatar mb-7">
-                                            <div className="ring-primary ring-offset-base-100 w-24 rounded-full ring-2 ring-offset-2">
-                                                <img src={character.image} />
-                                            </div>
-                                        </div>
+                            <CharacterDetailView character={character} />
 
-                                        <h1 className="text-lg text-success mb-1">{character.name}</h1>
-                                        <span> {character.status} | {character.gender} </span>
-
-                                        <p className="mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                            Proin varius ullamcorper lobortis. Sed eget sem risus.</p>
-                                    </>
-                                ) : (
-                                    <p>Character not found.</p>
-                                )}
-                            </div>
-
-                            {/* TODO: Module this section */}
                             <EpisodeDetail character={character} />
 
-                            {/* TODO: Module this modal */}
+                            {/* TODO: trigger open modal */}
                             <Modal content={modalContent} />
                         </div>
                     </div>
