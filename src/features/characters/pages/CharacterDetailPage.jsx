@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { useParams } from "react-router-dom"
+import { useParams, NavLink } from "react-router-dom"
 
 import { getOneEpisode } from "./../../../service/episodesService"
 
@@ -48,6 +48,12 @@ function CharacterDetail() {
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div className="flex justify-end">
+                <button className="btn btn-success mt-7">
+                    <NavLink to="/character"> Go back to Characters</NavLink>
+                </button>
             </div>
         </>
     )
