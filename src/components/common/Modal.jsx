@@ -1,6 +1,16 @@
+import { useEffect, useState } from "react";
+
 function Modal({ content }) {
+    const [open, setOpen] = useState(false)
+
+    useEffect(() => {
+        if (!content) return;
+        
+        document.getElementById('modal_character').showModal()
+    }, content)
+
     return (
-        <dialog id="my_modal_1" className="modal">
+        <dialog id="modal_character" className="modal">
             <div className="modal-box">
                 <h3 className="font-bold text-lg">{content?.name}</h3>
                 <p className="py-4">{content?.episode}</p>

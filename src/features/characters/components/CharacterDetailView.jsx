@@ -1,4 +1,26 @@
-function CharacterDetailView({ character }) {
+import { useState, useEffect } from "react"
+import { getOneCharacter } from "../service/charactersService"
+
+function CharacterDetailView({ id, updateCharacter }) {
+
+    const [character, setCharacter] = useState(null)
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchCharacters = async () => {
+            try {
+                const data = await getOneCharacter(id);
+                setCharacter(data)
+                updateCharacter(data)
+            } catch (error) {
+                console.log('Error al cargar episodios')
+            } finally {
+                setLoading(false)
+            }
+        }
+        fetchCharacters()
+    }, [id])
+
     return (
         <div className="w-16 flex-auto">
             {character ? (
