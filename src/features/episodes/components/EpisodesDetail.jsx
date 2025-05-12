@@ -1,4 +1,10 @@
-function EpisodeDetail({ character }) {
+function EpisodeDetail({ character, setOpenModal, setEpisode }) {
+
+    const handleModal = (e, episode) => {
+        setOpenModal(true)
+        setEpisode(episode)
+    }
+
     return (
         <div className="w-84 flex-auto px-7">
             <div className="w-100 flex-auto ">

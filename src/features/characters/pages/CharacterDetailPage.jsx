@@ -10,6 +10,7 @@ import EpisodeDetail from './../../episodes/components/EpisodesDetail'
 
 function CharacterDetail() {
     const { id } = useParams()
+    const [openModal, setOpenModal] = useState(false)
     const [modalContent, setModalContent] = useState()
     const [character, setCharacter] = useState(null)
     const [episode, setEpisode] = useState(null)
@@ -41,9 +42,8 @@ function CharacterDetail() {
                         <div className="flex">
                             <CharacterDetailView id={id} updateCharacter={setCharacter} />
 
-                            <EpisodeDetail character={character} />
+                            <EpisodeDetail character={character} setOpenModal={setOpenModal} setEpisode={setEpisode} />
 
-                            {/* TODO: trigger open modal */}
                             <Modal content={modalContent} />
                         </div>
                     </div>

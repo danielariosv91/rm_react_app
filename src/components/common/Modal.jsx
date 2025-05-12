@@ -1,13 +1,11 @@
 import { useEffect, useState } from "react";
 
 function Modal({ content }) {
-    const [open, setOpen] = useState(false)
-
     useEffect(() => {
         if (!content) return;
-        
+
         document.getElementById('modal_character').showModal()
-    }, content)
+    }, [content])
 
     return (
         <dialog id="modal_character" className="modal">
