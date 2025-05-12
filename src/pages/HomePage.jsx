@@ -29,7 +29,7 @@ function Index() {
 
             <section className="py-7">
                 <div className="flex justify-around m-6 ">
-                    <article class="prose">
+                    <article className="prose">
                         <h1> Characters</h1>
                     </article>
                 </div>

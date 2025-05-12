@@ -10,7 +10,7 @@ export default function CharacterCard() {
     useEffect(() => {
         const fetchCharacters = async () => {
             try {
-                const data = await getFirstCharacters();
+                const { data } = await getFirstCharacters();
                 setcharacters(data)
             } catch (error) {
                 console.log('Error al cargar episodios')
@@ -23,8 +23,8 @@ export default function CharacterCard() {
 
     return (
         <>
-            <div class="flex justify-center gap-7">
-                {characters.map((item) =>
+            <div className="flex justify-center gap-7">
+                {characters?.map((item) =>
                     <CardItem item={item} key={item.id} />
                 )}
             </div>
