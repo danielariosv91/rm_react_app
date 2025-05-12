@@ -14,11 +14,12 @@ function AppRoutes() {
         <Routes>
             <Route path="/" element={<Layout />}>
                 <Route index element={<Home />}></Route>
-                <Route path="/character/:id" element={<CharacterDetail />}></Route>
+
                 <Route path="/locations" element={<Location />}></Route>
             </Route>
             <Route path="/" element={<ContentLayout />}>
                 <Route path="/character" element={<Character />}></Route>
+                <Route path="/character/:id" element={<CharacterDetail />}></Route>
                 <Route path="/episodes" element={<Episodes />}></Route>
             </Route>
         </Routes>
